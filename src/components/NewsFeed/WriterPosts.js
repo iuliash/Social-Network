@@ -1,5 +1,7 @@
 import React from 'react';
 
+import UserPageInPost from '../User/UserPageInNews';
+
 
 class WriterPosts extends React.Component {
     constructor(props){
@@ -22,7 +24,10 @@ class WriterPosts extends React.Component {
     
     render(){
         return(
-            <form onSumbit={this.addPost}>
+            <UserPageInPost
+                
+            />
+            <form onSubmit={this.addPost}>
                 <textarea 
                     playceholder="Write post"
                     onChange={e => {this.setState({text: e.target.value})}} 

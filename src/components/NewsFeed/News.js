@@ -10,8 +10,13 @@ import {addPost} from '../../actions';
 class News extends React.Component {
     
     _addPost = (text) => {
-        let {posts} = this.props._posts;
-        let id = Math.random(100);
+        let posts = this.props._posts;
+        console.log(posts);
+        let id;
+        if (posts.length !==0) 
+            id = Math.random(100);
+        else 
+            id = 0;
         posts.push({
             id: id,
             user: {
@@ -20,19 +25,23 @@ class News extends React.Component {
             },
             content: {
                 image: '#', 
-                text:'Txt'
+                text: text
             },
                 date: Date.now()
         })
         this.props.add(posts);
+        console.log(this.props._posts);
     }
     
     render(){
-        //const {posts} = this.props._posts;
+        const posts = this.props._posts;
         return(
             <div>
-                <WriterPosts addPost = {this._addPost} />
-                {this.props._posts.map(post => (
+                <WriterPosts 
+                    addPost = {this._addPost} 
+                    
+                />
+                {posts.map(post => (
                     <Post 
                     post = {post}
                     key={post.id}
@@ -52,7 +61,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
         add: addPost
-    })
+    }, dispatch)
 }
 
 

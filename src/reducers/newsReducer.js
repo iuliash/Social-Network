@@ -3,10 +3,10 @@ const firstState = {
           {
             id: 1,
             user: {
-              photo: '#', 
+              photo: '/public/img/u1.jpg',  //разберись с путем 
               name: 'Ivanov Ivan'},
             content: {
-              image: '#', 
+              image: '', 
               text:'TextTextText'
             },
             date: '12.12.12'
