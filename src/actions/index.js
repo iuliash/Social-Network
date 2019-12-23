@@ -3,5 +3,9 @@ export function addPost(array){
 }
 
 export function deletePost(array){
-    return ({type: 'DELETE_POST', array});
+    return ({type: 'DELETE_POST', array}); 
+}
+
+export function deleteFriend(array){
+    return ({type: 'DELETE_FRIEND', array}); 
 }

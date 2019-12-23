@@ -1,17 +1,22 @@
 import React from 'react';
-import {createStore} from 'redux'
+import {createStore} from 'redux';
 import { Provider } from 'react-redux';
+import { HashRouter } from 'react-router-dom';
 import './App.css'
 
 import reducers from './reducers'
-import News from './components/NewsFeed/News'
+import Menu from './Menu'
+import Main from './Main'
 
 class App extends React.Component{ 
     render(){
         return(
             <div className="App">
                 <Provider store={createStore(reducers)}>
-                    <News />
+                    <HashRouter>
+                        <Menu />
+                        <Main />
+                    </HashRouter>
                 </Provider>
             </div>
         )

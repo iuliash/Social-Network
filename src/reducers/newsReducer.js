@@ -1,34 +1,28 @@
 const firstState = {
   posts: [
-          {
-            id: 1,
-            user: {
-              photo: '/public/img/u1.jpg',  //разберись с путем 
-              name: 'Ivanov Ivan'},
-            content: {
-              image: '', 
-              text:'TextTextText'
-            },
-            date: '12.12.12'
-          }, 
-          {
-            id: 2,
-            user: {
-              photo: '#', 
-              name: 'Petrov Petr'},
-            content: {
-              image: '#', 
-              text:'Teeeeeeeeeeeeeeeeext'
-            },
-            date: '21/21/21'
-          }
+    {
+      id: 7,
+      id_user: 1,
+      content: {
+        image: '#', 
+        text:'TextTextText'
+      }
+    }, 
+    {
+      id: 8,
+      id_user: 2,
+      content: {
+        image: '#', 
+        text:'Teeeeeeeeeeeeeeeeext'
+      }
+    }
   ]
 }
 
 export default function News (state = firstState, action) {
   switch (action.type) {
       case 'ADD_POST':
-        return  action.array
+        return  action.array  
       case 'DELETE_POST':
         return action.array
       default: return state

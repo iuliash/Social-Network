@@ -2,51 +2,43 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import WriterPosts from './WriterPosts'
-import Post from './Post'
+import WriterPosts from './WriterPosts';
+import Post from './Post';
 
 import {addPost} from '../../actions';
 
 class News extends React.Component {
-    
+
     _addPost = (text) => {
         let posts = this.props._posts;
-        console.log(posts);
-        let id;
-        if (posts.length !==0) 
-            id = Math.random(100);
-        else 
-            id = 0;
+        let id = Math.floor(Math.random() * (300 - 1)) + 1;
         posts.push({
             id: id,
-            user: {
-                photo: '#', 
-                name: 'Valilyev Vasya'
-            },
+            id_user: this.props._mainUser.id,
             content: {
                 image: '#', 
                 text: text
-            },
-                date: Date.now()
+            }
         })
-        this.props.add(posts);
-        console.log(this.props._posts);
+        this.props.add({posts: posts});
+        this.forceUpdate();
     }
     
     render(){
-        const posts = this.props._posts;
+        let posts = this.props._posts; 
+        let users = this.props._users;
         return(
             <div>
                 <WriterPosts 
-                    addPost = {this._addPost} 
-                    
+                    addPost = {this._addPost}
                 />
-                {posts.map(post => (
+                {posts.map(post => 
                     <Post 
                     post = {post}
+                    user={users[users.map(user => user.id).indexOf(post.id_user)]}
                     key={post.id}
                     />
-                ))}
+                )}
             </div>
         )
     }
@@ -54,7 +46,9 @@ class News extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        _posts: state.News.posts
+        _posts: state.News.posts, 
+        _mainUser: state.MainUser.user, 
+        _users: state.Users.users
     }
 }
 

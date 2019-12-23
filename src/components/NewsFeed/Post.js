@@ -1,16 +1,11 @@
 import React from 'react';
 
-import UserPageInPost from '../User/UserPageInPost'
+import UsersPageInPost from '../User/UsersPageInPost'
 
 export default function Post(props){
-    
-    
         return(
             <div>
-                <UserPageInPost
-                    userInfo = {props.post.user}
-                    date = {props.post.date}
-                />
+                <UsersPageInPost  user = {props.user}/>
                 <p>{props.post.content.text}</p>
             </div>
         )
