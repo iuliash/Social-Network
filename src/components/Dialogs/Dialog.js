@@ -22,7 +22,7 @@ class Dialog extends React.Component {
         this.props.send({dialogs: dialogs});
     }
 
-    click =() => {
+    showMessages =() => {
         let isVisible = this.state.isVisibleMessages;
         this.setState({isVisibleMessages: !isVisible});
         this.forceUpdate();
@@ -33,9 +33,8 @@ class Dialog extends React.Component {
         const dialog = dialogs[this.props.index];
         const users = this.props._users;
         return(
-            <div >  
-                <button onClick={this.click}>df</button>  
-                <div>
+            <div>  
+                <div onClick={this.showMessages}>
                     <UsersPage  user = {users[users.map(user => user.id).indexOf(dialog.id_user)]}/>
                     <p>{dialog.messageStory[dialog.messageStory.length - 1].text}</p>
                 </div>

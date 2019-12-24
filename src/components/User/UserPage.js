@@ -10,15 +10,15 @@ class UserPage extends React.Component {
         const user = this.props._user;
         console.log(this.props._user);
         return (
-            <div>
-                <div>
-                    <img src={user.photo}/>
+            <div className ="user-page">
+                <div className="user-main-info">
+                    <img className="user-main-info__photo" src={user.photo}/>
+                    <div className="user-main-info__text">
+                        <p className="user-main-info__name" >{user.name}</p>
+                        <p className="user-main-info__status" >{user.personalInfo.status}</p>
+                    </div>
                 </div>
                 <div>
-                    <div>
-                        <p>{user.name}</p>
-                        <p>{user.personalInfo.status}</p>
-                    </div>
                     <div>
                         <p>Birthday</p>
                         <p>{user.personalInfo.birthday}</p>

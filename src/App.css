@@ -1,12 +1,137 @@
-body {
-  margin: 0;
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 
-.App {
-  text-align: center;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 
 img {
   width: 200px;
   height: 200px;
 }
+body {
+  background-color: #333333;
+}
+
+.header {
+  height: 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header__text {
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+  font-size: 42px;
+  color: #ffffff;
+}
+
+.App {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.user-page-mini{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.user-page-mini__photo{
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  object-fit: cover;
+  margin: 5px;
+}
+
+.user-page-mini__name{
+  font-family: 'Roboto Slab' , serif;
+  font-weight: 300;
+  font-size: 24px;
+  text-decoration: none;
+  color: #ffffff; 
+  margin: 5px;
+}
+
+.menu {
+  background-color: #333333;
+  width: 15vw;
+}
+
+.navbar-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.navbar-menu__item {
+  font-family: 'Roboto Slab' , serif;
+  font-weight: 300;
+  font-size: 24px;
+  text-decoration: none;
+  color: #ffffff; 
+}
+
+.navbar-menu__item:hover {
+  border-color: #ffffff;
+  border-bottom: 6px;
+  border-bottom-style: solid;
+  transition-timing-function: ease;
+  transition-duration: 5s;
+}
+
+main{
+  width: 85vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+/*user page*/
+
+.user-page{
+  display: flew;
+  flex-direction: column;
+}
+
+.user-main-info{
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-main-info__photo{
+  width: 300px;
+  height: 450px;
+  object-fit: cover;
+  margin: 5px;
+}
+
+.user-main-info__text{}
+
+.user-main-info__name{}
+
+.user-main-info__status{}

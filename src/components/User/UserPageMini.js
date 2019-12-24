@@ -5,9 +5,9 @@ import {connect} from 'react-redux';
 class UserPageMini extends React.Component {
     render(){
         return(
-            <div>
-                <img src={this.props._user.photo} />
-                <p>{this.props._user.name}</p>
+            <div className="user-page-mini">
+                <img className="user-page-mini__photo" src={this.props._user.photo} />
+                <p className="user-page-mini__name">{this.props._user.name}</p>
             </div>
         )
     }
