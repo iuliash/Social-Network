@@ -1,11 +1,11 @@
 import React from 'react';
 
-import UsersPageInPost from '../User/UsersPageInPost'
+import UsersPage from '../User/UsersPage'
 
 export default function Post(props){
         return(
             <div>
-                <UsersPageInPost  user = {props.user}/>
+                <UsersPage  user = {props.user}/>
                 <p>{props.post.content.text}</p>
             </div>
         )

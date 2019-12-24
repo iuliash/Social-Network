@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default function UsersPageInPost(props) {
+export default function UsersPage(props) {
     return(
         <div>
             <img src={props.user.photo} />

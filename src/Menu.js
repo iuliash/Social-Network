@@ -12,7 +12,7 @@ export default function Menu() {
                 <li><Link to='/news'>News</Link></li>
                 <li><Link to='/userPage'>UserPage</Link></li>
                 <li><Link to='/friends'>Friends</Link></li>
-                <li><Link to='/messages'>Messages</Link></li>
+                <li><Link to='/dialogs'>Dialogs</Link></li>
                 </ul>
             </div>
             </div>

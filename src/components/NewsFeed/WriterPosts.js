@@ -1,43 +1,32 @@
 import React from 'react';
-
+import { useState } from 'react';
 import UserPageMini from '../User/UserPageMini';
 
 
-class WriterPosts extends React.Component {
-    constructor(props){
-        super(props);
-
-        this.state = {
-            text: ''
-        }
-    }
-
-    addPost = e => {
-        e.preventDefault();
-        const {text} = this.state;
-        if (text) {
-            this.props.addPost(text);
-            this.setState({text : ''});
-        }
-        return text;
-    }
+export default function WriterPosts(props) {
     
-    render(){
-        return(
-            <div>
-                <UserPageMini/>
-                <form onSubmit={this.addPost}>
-                    <textarea 
-                        playceholder="Write post"
-                        onChange={e => {this.setState({text: e.target.value})}} 
-                        value={this.state.text}
-                    />
-                    <button>Add post</button>
-                </form> 
-            </div>
-            
-        )
-    }
-}
+    const [postText, setPostText] = useState('');
 
-export default WriterPosts;
+    const addPost = e => {
+        e.preventDefault();
+        if (postText) {
+            props.addPost(postText);
+            setPostText('')
+        }
+        return postText;
+    }
+
+    return(
+        <div>
+            <UserPageMini/>
+            <form onSubmit={addPost}>
+                <textarea 
+                    playceholder="Write post"
+                    onChange={e => {setPostText(e.target.value)}} 
+                    value={postText}
+                />
+                <button>Add post</button>
+            </form> 
+        </div>
+    )
+}
