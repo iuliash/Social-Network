@@ -1,11 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import { hashHistory } from 'react-router';
 
 import WriterPosts from './WriterPosts';
 import Post from './Post';
 
 import {addPost} from '../../actions';
+
+import p4 from '../../img/p4.jpg'
 
 class News extends React.Component {
 
@@ -16,11 +19,13 @@ class News extends React.Component {
             id: id,
             id_user: this.props._mainUser.id,
             content: {
-                image: '#', 
+                image: p4, 
                 text: text
             }
         })
         this.props.add({posts: posts});
+        //hashHistory.push('/news/${posts.id}');
+        hashHistory.push('/news/' + id);
         this.forceUpdate();
     }
     
@@ -31,14 +36,18 @@ class News extends React.Component {
             <div>
                 <WriterPosts 
                     addPost = {this._addPost}
+                    user = {this.props._mainUser}
                 />
-                {posts.map(post => 
-                    <Post 
-                    post = {post}
-                    user={users[users.map(user => user.id).indexOf(post.id_user)]}
-                    key={post.id}
-                    />
-                )}
+                <div className="posts">
+                    {posts.map(post => 
+                        <Post 
+                        post = {post}
+                        user={users[users.map(user => user.id).indexOf(post.id_user)]}
+                        key={post.id}
+                        />
+                    )}    
+                </div>
+                
             </div>
         )
     }

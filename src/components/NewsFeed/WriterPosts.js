@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import UserPageMini from '../User/UserPageMini';
+import UsersPage from '../User/UsersPage'
 
 
 export default function WriterPosts(props) {
@@ -17,15 +17,14 @@ export default function WriterPosts(props) {
     }
 
     return(
-        <div>
-            <UserPageMini/>
-            <form onSubmit={addPost}>
-                <textarea 
-                    playceholder="Write post"
+        <div className="writer-post">
+            <UsersPage  user = {props.user} />
+            <form onSubmit={addPost} className="post-form">
+                <textarea className="post-form__input"
                     onChange={e => {setPostText(e.target.value)}} 
                     value={postText}
                 />
-                <button>Add post</button>
+                <button className="post-form__btn">Add post</button>
             </form> 
         </div>
     )

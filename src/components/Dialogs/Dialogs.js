@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
 
 import Dialog from './Dialog'
 
@@ -8,9 +7,8 @@ import Dialog from './Dialog'
 class Dialogs extends React.Component {
     render(){
         let dialogs = this.props._dialogs; 
-        let users = this.props._users;
         return(
-            <div>
+            <div className="dialogs">
                 {dialogs.map(dialog => 
                     <Dialog 
                     index={dialogs.map(dialog => dialog.id).indexOf(dialog.id)}

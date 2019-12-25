@@ -4,9 +4,12 @@ import UsersPage from '../User/UsersPage'
 
 export default function Post(props){
         return(
-            <div>
+            <div className="post">
                 <UsersPage  user = {props.user}/>
-                <p>{props.post.content.text}</p>
+                <div className="post-content">
+                    <img alt="Proglem with pictire" src={props.post.content.image} className="post-content__img"/>
+                    <p className="post-content__text" >{props.post.content.text}</p>
+                </div>
             </div>
         )
     

@@ -19,21 +19,24 @@ export default function Messages(props){
 
     return(
         <div>
-            <div>
+            <div className="messages">
                 {props.story.map(message => (
-                    <div>
-                        <UsersPage user = {users[users.map(user => user.id).indexOf(message.id_user)]} />
-                        <p>{message.text}</p>
+                    <div className="message">
+                        <div className="message__user">
+                            <UsersPage user = {users[users.map(user => user.id).indexOf(message.id_user)]} />
+                        </div>
+                        <p className="message__text">{message.text}</p>
                     </div>
                 ))}
             </div>
-            <form onSubmit={sendMessage}>
+            <form onSubmit={sendMessage} className="message__send">
                 <input 
                     playceholder="New message"
                     onChange={e => {setMessage(e.target.value)}} 
                     value={massage}
+                    className="send__inp"
                 />
-                <button>Send</button>
+                <button className="send__btn">Send</button>
             </form>
         </div>
     )

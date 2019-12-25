@@ -9,7 +9,7 @@ export default function Menu() {
             <UserPageMini />
             <ul className="navbar-menu">
                 <li><Link to='/userPage' className="navbar-menu__item">UserPage</Link></li>
-                <li><Link to='/news' className="navbar-menu__item">News</Link></li>
+                <li><Link to='/news/1' className="navbar-menu__item">News</Link></li>
                 <li><Link to='/friends' className="navbar-menu__item">Friends</Link></li>
                 <li><Link to='/dialogs' className="navbar-menu__item">Dialogs</Link></li>
             </ul>

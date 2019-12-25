@@ -13,7 +13,7 @@ export default function Main() {
     return(
         <main>
             <Switch>
-                <Route exact path='/news' component={News}/>
+                <Route path='/news/:id' component={News}/>
                 <Route path='/userPage' component={UserPage}/>
                 <Route path='/friends' component={FriendsList}/>
                 <Route path='/dialogs' component={Dialogs}/>

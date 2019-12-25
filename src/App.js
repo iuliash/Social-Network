@@ -2,6 +2,8 @@ import React from 'react';
 import {createStore} from 'redux';
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
+import { browserHistory } from 'react-router';
+
 import './App.css'
 
 import reducers from './reducers'
@@ -13,11 +15,13 @@ class App extends React.Component{
         return(
             <div>
                 <div className="header">
-                    <p className="header__text">Social.Net</p>
+                    <div className="header__logo">
+                        <p className="logo__text">Social.Net</p>
+                    </div>
                 </div>
                 <div className="App">
                     <Provider store={createStore(reducers)}>
-                        <HashRouter>
+                        <HashRouter history={browserHistory}>
                             <Menu />
                             <Main />
                         </HashRouter>

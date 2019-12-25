@@ -3,9 +3,9 @@ import React from 'react';
 
 export default function UsersPage(props) {
     return(
-        <div>
-            <img src={props.user.photo} />
-            <p>{props.user.name}</p>
+        <div className="users-page">
+            <img alt="Proglem with pictire" src={props.user.photo} className="users-page__img"/>
+            <p className="users-page__name">{props.user.name}</p>
         </div>
     )
 }

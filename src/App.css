@@ -21,12 +21,10 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
-img {
-  width: 200px;
-  height: 200px;
-}
-body {
+.menu {
   background-color: #333333;
+  width: 15vw;
+  height: 150vw;
 }
 
 .header {
@@ -34,9 +32,18 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #333333;
+  align-items: flex-start;
 }
 
-.header__text {
+.header__logo{
+  width: 15vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo__text {
   font-family: 'Roboto Slab', serif;
   font-weight: bold;
   font-size: 42px;
@@ -57,25 +64,22 @@ body {
 }
 
 .user-page-mini__photo{
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   border-radius: 100%;
   object-fit: cover;
   margin: 5px;
+  margin-left: 25px;
 }
 
 .user-page-mini__name{
   font-family: 'Roboto Slab' , serif;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 38px;
   text-decoration: none;
-  color: #ffffff; 
-  margin: 5px;
-}
-
-.menu {
-  background-color: #333333;
-  width: 15vw;
+  color: white; 
+  margin: 10px;
+  margin-left: 25px;
 }
 
 .navbar-menu {
@@ -90,9 +94,9 @@ body {
 .navbar-menu__item {
   font-family: 'Roboto Slab' , serif;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 32px;
   text-decoration: none;
-  color: #ffffff; 
+  color: #ffffff;
 }
 
 .navbar-menu__item:hover {
@@ -114,24 +118,344 @@ main{
 /*user page*/
 
 .user-page{
-  display: flew;
-  flex-direction: column;
-}
-
-.user-main-info{
   display: flex;
-  justify-content: space-between;
+  margin-top: 40px;
 }
 
-.user-main-info__photo{
+.user-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.user-info__photo{
   width: 300px;
-  height: 450px;
+  height: 450px;  
   object-fit: cover;
   margin: 5px;
 }
 
-.user-main-info__text{}
+.user-info__text{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-left: 15px;
+  margin-top: 5px;
+}
 
-.user-main-info__name{}
+.user-info__name{
+  font-family: 'Roboto Slab' , serif;
+  font-weight: 300;
+  font-size: 64px;
+  text-decoration: none;
+  color: black; 
+}
 
-.user-main-info__status{}
+.user-info__status{
+  font-family: 'Roboto Slab' , serif;
+  font-weight: 300;
+  font-size: 32px;
+  text-decoration: none;
+  color: black;
+}
+
+.user-info__type{
+  font-family: 'Roboto Slab' , serif;
+  font-weight: 300;
+  font-size: 28px;
+  text-decoration: none;
+  color: gray;
+}
+
+.user-info__value{  
+  font-family: 'Roboto Slab' , serif;
+  font-weight: 300;
+  font-size: 26px;
+  text-decoration: none;
+  color: black;
+}
+
+/* news */
+
+.posts {
+  display: flex;
+  width: 60vw;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.writer-post{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 40px;
+  width: 50vw;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.post-form__input {
+  height: 103px;
+  width: 50vw;
+  margin-bottom: 30px;
+
+  font-family: 'Roboto Slab' , serif;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.post-form__btn {
+  width: 156px;
+  height: 40px;
+  border: 1px solid #000000; 
+  background: #333333;
+  margin-left: 267px;
+
+  font-family: 'Roboto Slab' , serif;
+  font-weight: 300;
+  font-size: 18px;
+
+  color: #ffffff;
+}
+
+.post{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.post-content {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-content__img{
+  width: 900px;
+  height: 700px;
+  object-fit: cover;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.post-content__text{
+  font-family: 'Roboto Slab' , serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-decoration: none;
+  color:black; 
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* users page */
+
+.users-page {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.users-page__img{
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  object-fit: cover;
+  margin: 5px;
+}
+
+.users-page__name{
+  font-family: 'Roboto Slab' , serif;
+  font-weight: 300;
+  font-size: 28px;
+  text-decoration: none;
+  color:black; 
+  margin-left: 20px;
+}
+ 
+
+/* friends */
+
+.friends-list{
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.friend{
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.friend__img{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  object-fit: cover;
+  margin: 5px;
+}
+
+.friend-active{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 70px;
+}
+
+.friend-active__txt{
+  font-family: 'Roboto Slab' , serif;
+  font-weight: 300;
+  font-size: 28px;
+  text-decoration: none;
+  color:black; 
+  margin: 20px;
+}
+
+.friend-active__btn{
+  width: 156px;
+  height: 40px;
+  border: 1px solid #000000; 
+  background: #333333;
+  margin-left: 267px;
+
+  font-family: 'Roboto Slab' , serif;
+  font-weight: 300;
+  font-size: 18px;
+
+  color: #ffffff;
+}
+
+/* dialogs */
+
+.dialogs {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.dialog-with-user {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  transition: all 1s
+}
+
+.open {
+  background-color: peachpuff;
+}
+
+.dialog__user {
+  width: 12vw;
+  display: flex;
+  align-items: flex-start;
+}
+
+.dialog__message {
+  width: 38vw;
+  padding: 20px;
+  font-family: 'Roboto Slab' , serif;
+  font-weight: 300;
+  font-size: 28px;
+  text-decoration: none;
+  color:black; 
+  margin: 20px;
+}
+
+.not-read {
+  background-color: gray;
+}
+
+.message-srory {
+  display: flex;
+  align-items: center;
+  width: 50vw;
+  justify-content: center;
+}
+
+.messages {
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.message{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 50vw;
+}
+
+.message__user{
+  width: 10vw;
+  display: flex;
+  align-items: flex-start;
+}
+
+.message__text {
+  width: 30vw;
+  padding: 30px;
+  font-family: 'Roboto Slab' , serif;
+  font-weight: 300;
+  font-size: 28px;
+  text-decoration: none;
+  color:black; 
+  margin: 15px;
+  background-color: peachpuff;
+  border-radius: 10px;
+}
+
+.message__send {
+   margin-top: 10px;
+   margin-bottom: 40px;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: flex-start;
+}
+
+.send__inp {
+  height: 40px;
+  width: 35vw;
+  font-family: 'Roboto Slab' , serif;
+  font-weight: 300;
+  font-size: 18px; 
+}
+
+.send__btn{
+  width: 156px;
+  height: 40px;
+  border: 1px solid #000000; 
+  background: #333333;
+  margin-left: 45px;
+
+  font-family: 'Roboto Slab' , serif;
+  font-weight: 300;
+  font-size: 18px;
+
+  color: #ffffff;
+}

@@ -9,3 +9,7 @@ export function deleteFriend(array){
 export function sendMessage(array){
     return ({type: 'SEND_MESSAGE', array}); 
 }
+
+export function readMessage(array){
+    return ({type: 'READ_MESSAGE', array}); 
+}
