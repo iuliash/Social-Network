@@ -1,7 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
- 
- //<Route path='/messages' component={Messages}/>
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import News from './components/NewsFeed/News'
 import UserPage from './components/User/UserPage'
@@ -17,9 +15,9 @@ export default function Main() {
                 <Route path='/userPage' component={UserPage}/>
                 <Route path='/friends' component={FriendsList}/>
                 <Route path='/dialogs' component={Dialogs}/>
+                <Route path='/' render={() => (<Redirect to='/news/1' />)} />
             </Switch>
         </main>
     )
-    
-}
+}   
 

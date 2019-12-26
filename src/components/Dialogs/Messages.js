@@ -18,7 +18,7 @@ export default function Messages(props){
     const users = props.users;
 
     return(
-        <div>
+        <div className="messages-story">
             <div className="messages">
                 {props.story.map(message => (
                     <div className="message">

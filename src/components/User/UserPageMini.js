@@ -7,7 +7,9 @@ class UserPageMini extends React.Component {
         return(
             <div className="user-page-mini">
                 <img alt="Proglem with pictire" className="user-page-mini__photo" src={this.props._user.photo} />
-                <p className="user-page-mini__name">{this.props._user.name}</p>
+                <div className="user-page-mini__txt">
+                    <p className="user-page-mini__name">{this.props._user.name}</p>
+                </div>
             </div>
         )
     }
