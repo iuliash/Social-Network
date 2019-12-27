@@ -22,26 +22,46 @@ time, mark, audio, video {
 }
 
 body {
-  background-color: #333333;
+  background-color:black;
 }
 
 .menu {
-  background-color: #333333;
+  background-color: black;
   width: 15vw;
+  transition: all 1.8s;
+  margin-left: -15vw;
+  
+}
+
+.menu-open {
+  margin-left: 0vw;
 }
 
 .header {
   height: 10vh;
   display: flex;
   justify-content: flex-end;
-  background-color: #333333;
+  background-color: black;
   align-items: center;
 }
 
 .header__logo{
+  width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.logo__img{
+  width: 5vw;
+  height: 10vh;
+  object-fit: cover;
+  transition: all 2s;
+  margin-left: 0.5vw;
+}
+
+.logo-open {
+  margin-left: 10.5vw;
 }
 
 .logo__text {
@@ -51,6 +71,7 @@ body {
   font-size: 5vh;
   color: #ffffff;
   margin-right: 1vw;
+  text-decoration: none;
 }
 
 .App {
@@ -114,7 +135,7 @@ body {
 }
 
 main{
-  width: 85vw;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
