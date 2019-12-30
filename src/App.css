@@ -43,6 +43,12 @@ body {
   justify-content: flex-end;
   background-color: black;
   align-items: center;
+  position: fixed;
+  transition: all 1.5s;
+}
+
+.scrollAnimate{
+  margin-top: -10vh;
 }
 
 .header__logo{
@@ -70,7 +76,7 @@ body {
   font-size: 3vw;
   font-size: 5vh;
   color: #ffffff;
-  margin-right: 1vw;
+  margin-right: 2vw;
   text-decoration: none;
 }
 

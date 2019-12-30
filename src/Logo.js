@@ -6,7 +6,7 @@ import open from './img/menu-open.jpg'
 
 export default function Logo(props) {
     return (
-        <div className="header">
+        <div className="header" ref = {props.headerRef}>
             <div className="header__logo">
                 <img 
                     ref={props.logoRef}

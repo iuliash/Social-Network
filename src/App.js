@@ -4,12 +4,13 @@ import { Provider } from 'react-redux';
 import { HashRouter, Link} from 'react-router-dom';
 import { browserHistory} from 'react-router';
 
-import './App.css'
-
 import reducers from './reducers'
 import Menu from './Menu'
 import Main from './Main'
 import Logo from './Logo'
+
+let lastScroll = 0;
+
 
 class App extends React.Component{ 
     constructor(){
@@ -21,6 +22,24 @@ class App extends React.Component{
 
         this.menuElement = React.createRef();
         this.logoElement = React.createRef();
+        this.header = React.createRef();
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+    
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = e => {
+        let sy = window.scrollY;
+        if (sy > lastScroll)
+            this.header.current.className = 'header scrollAnimate';  
+        else 
+            this.header.current.className = 'header';
+        lastScroll = sy;
     }
 
     changeVisibleMenu = () => {
@@ -47,6 +66,7 @@ class App extends React.Component{
                             visibleMenu={isVisible}
                             changeVisibleMenu = {this.changeVisibleMenu}
                             logoRef = {this.logoElement}
+                            headerRef = {this.header}
                         />
                         <div className="App">
                             {isVisible &&  <Menu 
