@@ -20,7 +20,7 @@ class FriendsList extends React.Component {
         const friends = this.props._friends;
         const users = this.props._users;
         return(
-            <div className="friends-list">
+            <div className="friends">
                 {friends.map(friend => (
                     <Friend 
                         user = {users[users.map(user => user.id).indexOf(friend.id)]} 

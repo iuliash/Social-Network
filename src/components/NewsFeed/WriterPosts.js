@@ -17,14 +17,14 @@ export default function WriterPosts(props) {
     }
 
     return(
-        <div className="writer-post">
+        <div className="writerPost">
             <UsersPage  user = {props.user} />
-            <form onSubmit={addPost} className="post-form">
-                <textarea className="post-form__input"
+            <form onSubmit={addPost} className="postForm">
+                <textarea className="postForm__input"
                     onChange={e => {setPostText(e.target.value)}} 
                     value={postText}
                 />
-                <button className="post-form__btn">Add post</button>
+                <button className="postForm__btn">Add post</button>
             </form> 
         </div>
     )

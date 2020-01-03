@@ -25,33 +25,58 @@ body {
   background-color:black;
 }
 
+/* menu */
+
 .menu {
   background-color: black;
   width: 15vw;
-  transition: all 1.8s;
+  transition: all 0.8s;
   margin-left: -15vw;
-  
 }
 
-.menu-open {
+.menu_isOpen {
   margin-left: 0vw;
 }
 
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  margin-top: 2.5vw;
+}
+
+.navbar__item {
+  font-family: 'Roboto Slab' , serif;
+  font-size: 2vw;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.navbar__item:hover {
+  border-color: #ffffff;
+  border-bottom: 0.2vw;
+  border-bottom-style: solid;
+  transition-duration: 1s;
+}
+
+/* header */
+
 .header {
-  height: 10vh;
+  height: 5vw;
   display: flex;
   justify-content: flex-end;
   background-color: black;
   align-items: center;
   position: fixed;
-  transition: all 1.5s;
+  transition: all 1s;
 }
 
-.scrollAnimate{
-  margin-top: -10vh;
+.header_onScroll{
+  margin-top: -5vw;
 }
 
-.header__logo{
+.logo{
   width: 100vw;
   display: flex;
   align-items: center;
@@ -60,85 +85,66 @@ body {
 
 .logo__img{
   width: 5vw;
-  height: 10vh;
+  height: 5vw;
   object-fit: cover;
-  transition: all 2s;
+  transition: margin-left 1s;
   margin-left: 0.5vw;
 }
 
-.logo-open {
+.logo__img_menuIsOpen {
   margin-left: 10.5vw;
 }
 
 .logo__text {
   font-family: 'Roboto Slab', serif;
   font-weight: bold;
-  font-size: 3vw;
-  font-size: 5vh;
+  font-size: 2.7vw;
   color: #ffffff;
   margin-right: 2vw;
   text-decoration: none;
 }
 
-.App {
+/* app */
+
+.app {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 }
 
-.user-page-mini{
+/* user page mini */
+
+.userPage_mini{
   display: flex;
   justify-content: space-around;
-  margin-top: 12vh;
+  margin-top: 6vw;
   align-items: center;
   width: 15vw;
   margin-left: 1vw;
 }
 
-.user-page-mini__photo{
+.userPage__photo_mini{
   width: 5vw;
-  height: 10vh;
+  height: 5vw;
   border-radius: 100%;
   object-fit: cover;
 }
 
-.user-page-mini__txt {
+.userPage__txt_mini {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.user-page-mini__name{
+.userPage__name_mini{
   font-family: 'Roboto Slab' , serif;
   text-decoration: none;
   color: white;
-  font-size: 4vw;
-  font-size: 4vh;
+  font-size: 2vw;
   margin-left: 0.5vw;
 }
 
-.navbar-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  list-style-type: none;
-  margin-top: 5vh;
-}
-
-.navbar-menu__item {
-  font-family: 'Roboto Slab' , serif;
-  font-size: 4vw;
-  font-size: 4vh;
-  text-decoration: none;
-  color: #ffffff;
-}
-
-.navbar-menu__item:hover {
-  border-color: #ffffff;
-  border-bottom: 0.2vw;
-  border-bottom-style: solid;
-  transition-duration: 1s;
-}
+/* main */
 
 main{
   width: 100vw;
@@ -146,69 +152,64 @@ main{
   justify-content: center;
   align-items: center;
   background-color: white;
-  margin-top: 10vh;
+  margin-top: 5vw;
 }
 
-/*user page*/
+/* user page */
 
-.user-page{
+.userPage{
   display: flex;
-  margin-top: 10vh;
-  margin-bottom: 8vh;
+  margin-top: 5vw;
+  margin-bottom: 3.5vw;
 }
 
-.user-info{
+.info{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   margin-left: 2vw;
-  margin-top: 2vh;
+  margin-top: 1vw;
 }
 
-.user-photo{
-  width: 40vw;
-  height: 72vh;  
-  object-fit: cover;
-}
-
-.user-info__text{
+.info__text{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
 }
 
-.user-info__name{
+.info__name{
   font-family: 'Roboto Slab' , serif;
-  font-size: 9vw;
-  font-size: 9vh;
+  font-size: 4.5vw;
   text-decoration: none;
   color: black; 
 }
 
-.user-info__status{
+.info__status{
   font-family: 'Roboto Slab' , serif;
-  font-size: 6vw;
-  font-size: 6vh;
+  font-size: 3vw;
   text-decoration: none;
   color: black;
 }
 
-.user-info__type{
+.info__type{
   font-family: 'Roboto Slab' , serif;
-  font-size: 4.5vw;
-  font-size: 4.5vh;
+  font-size: 2.2vw;
   text-decoration: none;
   color: gray;
 }
 
-.user-info__value{  
+.info__value{  
   font-family: 'Roboto Slab' , serif;
-  font-weight: 300;
-  font-size: 4vw;
-  font-size: 4vh;
+  font-size: 2vw;
   text-decoration: none;
   color: black;
+}
+
+.photo{
+  width: 40vw;
+  height: 34.5vw;  
+  object-fit: cover;
 }
 
 /* news */
@@ -219,43 +220,40 @@ main{
   align-items: flex-start;
 }
 
-
-.writer-post{
+.writerPost{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 10vh;
+  margin-top: 5vw;
   width: 50vw;
 }
 
-.post-form {
+.postForm {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  margin-top: 2vh;
+  margin-top: 1vw;
 }
 
-.post-form__input {
-  height: 15vh;
+.postForm__input {
+  height: 7vw;
   width: 50vw;
-  margin-bottom: 4vh;
+  margin-bottom: 2vw;
 
   font-family: 'Roboto Slab' , serif;
-  font-size: 3vw;
-  font-size: 3vh;
+  font-size: 1.5vw;
 }
 
-.post-form__btn {
+.postForm__btn {
   width: 10vw;
-  height: 6vh;
+  height: 3vw;
   border: 1px solid #000000; 
   background: #333333;
 
   font-family: 'Roboto Slab' , serif;
-  font-size: 3vw;
-  font-size: 3vh;
+  font-size: 1.5vw;
 
   color: #ffffff;
 }
@@ -264,110 +262,106 @@ main{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 5vh;
-  margin-bottom: 2vh;
+  margin-top: 2vw;
+  margin-bottom: 1vw;
 }
 
-.post-content {
+.content {
   width: 50vw;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.post-content__img{
-  width: 40vw;
-  height: 60vh;
+.content__img{
+  width: 45vw;
+  height: 30vw;
   object-fit: cover;
-  margin-top: 3vh;
-  margin-bottom: 2vh;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
 }
 
-.post-content__text{
+.content__text{
   font-family: 'Roboto Slab' , serif;
-  font-size: 3.5vw;
-  font-size: 3.5vh;
+  font-size: 1.7vw;
   text-decoration: none;
   color:black; 
-  margin-top: 1vh;
-  margin-bottom: 2vh;
+  margin-top: 0.5vw;
+  margin-bottom: 1vw;
 }
 
 /* users page */
 
-.users-page {
+.usersPage {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  margin-top: 2vh;
-  margin-bottom: 1vh;
+  justify-content: space-between;
+  margin-top: 1vw;
+  margin-bottom: 0.5vw;
 }
 
-.users-page__img{
-  width: 6vw;
-  height: 12vh;
+.usersPage__img{
+  width: 5vw;
+  height: 5vw;
   border-radius: 100%;
   object-fit: cover;
+  margin-right: 1vw;
 }
 
-.users-page__name{
+.usersPage__name{
   font-family: 'Roboto Slab' , serif;
-  font-size: 5vw;
-  font-size: 5vh;
+  font-size: 2vw;
   text-decoration: none;
   color:black; 
-  margin-left: 2vw;
 }
  
 
 /* friends */
 
-.friends-list{
+.friends{
   width: 50vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10vh;
+  margin-top: 5vw;
 }
 
 .friend{
   display: flex;
   align-items: center;
-  margin-bottom: 8vh;
+  margin-bottom: 3vw;
 }
 
 .friend__img{
   width: 14vw;
-  height: 30vh;
+  height: 14vw;
   border-radius: 100%;
   object-fit: cover;
 }
 
-.friend-active{
+.active{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-left: 4vw;
 }
 
-.friend-active__txt{
+.active__txt{
   font-family: 'Roboto Slab' , serif;
-  font-size: 4.5vw;
-  font-size: 4.5vh;
+  font-size: 2.2vw;
   text-decoration: none;
   color:black; 
 }
 
-.friend-active__btn{
+.active__btn{
   width: 10vw;
-  height: 6vh;
+  height: 3vw;
   border: 1px solid #000000; 
   background: #333333;
   margin-left: 20vw;
 
   font-family: 'Roboto Slab' , serif;
-  font-size: 3vw;
-  font-size: 3vh;
+  font-size: 1.5vw;
 
   color: #ffffff;
 }
@@ -379,63 +373,15 @@ main{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
+  margin-top: 5vw;
+  margin-bottom: 7vw;
 }
 
-.dialog {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.dialog-with-user {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  margin-bottom: 7vh;
-  transition: all 1s
-}
-
-.open {
-  background-color: peachpuff;
-}
-
-.dialog__user {
-  width: 12vw;
-  display: flex;
-  align-items: flex-start;
-  margin-left: 1vw;
-}
-
-.dialog__message {
-  width: 30vw;
-  padding-left: 1vw;
-  padding-right: 1vw;
-  padding-bottom: 3vh;
-  padding-top: 3vh;
-  font-family: 'Roboto Slab' , serif;
-  font-size: 4vw;
-  font-size: 4vh;
-  text-decoration: none;
-  color:black;
-  margin-top: 2vh;
-  margin-left: 8vw;
-}
-
-.not-read {
-  background-color: gray;
-}
-
-.message-srory {
+.messageStory {
   display: flex;
   align-items: center;
   width: 50vw;
   justify-content: center;
-}
-
-.messages-story {
-  margin-left: 2vw;
 }
 
 .messages {
@@ -462,46 +408,384 @@ main{
   width: 20vw;
   padding-left: 1vw;
   padding-right: 7vw;
-  padding-bottom: 4vh;
-  padding-top: 4vh;
+  padding-bottom: 2vw;
+  padding-top: 2vw;
   font-family: 'Roboto Slab' , serif;
-  font-size: 4vw;
-  font-size: 4vh;
+  font-size: 2vw;
   text-decoration: none;
   color:black;
   background-color: peachpuff;
   border-radius: 1vw;
   margin-left: 9vw;
-  margin-top: 2vh;
+  margin-top: 1vw;
 }
 
-.message__send {
-   margin-top: 4vh;
-   margin-bottom: 4vh;
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   justify-content: flex-start;
+.send {
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .send__inp {
-  height: 6vh;
+  height: 3vw;
   width: 35vw;
   font-family: 'Roboto Slab' , serif;
-  font-size: 3vw;
-  font-size: 3vh; 
+  font-size: 1.5vw;
 }
 
 .send__btn{
   width: 10vw;
-  height: 6vh;
+  height: 3vw;
   margin-left: 2vw;
   border: 1px solid #000000; 
   background: #333333;
 
   font-family: 'Roboto Slab' , serif;
-  font-size: 3vw;
-  font-size: 3vh;
+  font-size: 1.5vw;
 
   color: #ffffff;
+}
+
+.userDialog {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-bottom: 3.5vw;
+}
+
+.userDialog_open {
+  background-color: peachpuff;
+}
+
+.user {
+  width: 12vw;
+  display: flex;
+  align-items: flex-start;
+  margin-left: 1vw;
+}
+
+.msg {
+  width: 25vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-bottom: 1.5vw;
+  padding-top: 1.5vw;
+  font-family: 'Roboto Slab' , serif;
+  font-size: 2vw;
+  text-decoration: none;
+  color:black;
+  margin-top: 1.5vw;
+  margin-bottom: 1vw;
+}
+
+.msg_notRead {
+  background-color: gray;
+}
+
+
+@media only screen and (max-device-width: 1024px) {
+  body {
+    background-color: white;
+  }
+
+  .menu {
+    width: 100vw;
+    height: 100vh;
+    margin-top: -100vh;
+    margin-left: 0vw;
+  }
+  
+  .menu_isOpen {
+    margin-top: 0vw;
+  }
+  
+  .navbar {
+    margin-top: 10vh;
+  }
+  
+  .navbar__item {
+    font-size: 10vw;
+  }
+  
+  /* header */
+  .header {
+    height: 10vh;
+  }
+  
+  .header_onScroll{
+    margin-top: -10vh;
+  }
+  
+  .logo__img{
+    width: 10vh;
+    height: 10vh;
+  }
+  
+  .logo__img_menuIsOpen {
+    margin-left: 0.5vw;
+  }
+  
+  .logo__text {
+    font-size: 7vh;
+  }
+  
+  /* app */
+  
+  .app {
+    flex-direction: column;
+  }
+  
+  /* user page mini */
+  
+  .userPage_mini{
+    margin-top: 15vh;
+    width: 100vw;
+    margin-left: 0vh;
+  }
+  
+  .userPage__photo_mini{
+    width: 18vh;
+    height: 18vh;
+  }
+  
+  .userPage__name_mini{
+    font-size: 4vh;
+  }
+  
+  /* main */
+  
+  main{
+    margin-top: 10vh;
+  }
+  
+  /* user page */
+  
+  .userPage{
+    flex-direction: column;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+  
+  .info{
+    margin-left: 2vh;
+    margin-top: 1vh;
+  }
+  
+  .info__name{
+    font-size: 5vh;
+  }
+  
+  .info__status{
+    font-size: 3vh;
+  }
+  
+  .info__type{
+    font-size: 2.3vh;
+  }
+  
+  .info__value{  
+    font-size: 2vh;
+  }
+  
+  .photo{
+    width: 40vh;
+    height: 36vh;  
+    object-fit: cover;
+    margin-bottom: 2.3vh;
+  }
+  
+  /* news */
+  
+  .posts {
+    flex-direction: column;
+  }
+  
+  .writerPost{
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 5vh;
+    width: 70vw;
+  }
+  
+  .postForm {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1vh;
+  }
+  
+  .postForm__input {
+    height: 20vh;
+    width: 70vw;
+    margin-bottom: 2vh;
+  
+    font-family: 'Roboto Slab' , serif;
+    font-size: 1.5vh;
+  }
+  
+  .postForm__btn {
+    width: 15vh;
+    height: 4vh;
+    font-size: 2vh;
+  }
+  
+  .post{
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    width: 70vw;
+  }
+  
+  .content {
+    width: 70vw;
+  }
+  
+  .content__img{
+    width: 70vw;
+    height: 35vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+  
+  .content__text{
+    font-family: 'Roboto Slab' , serif;
+    font-size: 3vh;
+    text-decoration: none;
+    color:black; 
+    margin-top: 0.5vh;
+    margin-bottom: 1vh;
+  }
+  
+  /* users page */
+  
+  .usersPage {
+    margin-top: 1vh;
+    margin-bottom: 0.5vh;
+  }
+  
+  .usersPage__img{
+    width: 10vh;
+    height: 10vh;
+    margin-right: 1vh;
+  }
+  
+  .usersPage__name{
+    font-size: 3vh;
+  }
+   
+  
+  /* friends */
+  
+  .friends{
+    width: 100vw;
+    margin-top: 10vh;
+  }
+  
+  .friend{
+    display: flex;
+    align-items: center;
+    margin-bottom: 6vh;
+    flex-direction: column;
+  }
+  
+  .friend__img{
+    width: 25vh;
+    height: 25vh;
+  }
+  
+  .active{
+    align-items: center;
+    margin-left: 0vh;
+  }
+  
+  .active__txt{
+    font-size: 5vh;
+  }
+  
+  .active__btn{
+    width: 20vh;
+    height: 5vh;
+    margin-left: 0vw;
+    font-size: 3vh;
+  }
+  
+  /* dialogs */
+  
+  .dialogs {
+    width: 70vw;
+    margin-top: 8vh;
+    margin-bottom: 7vh;
+  }
+  
+  .messageStory {
+    width: 70vw;
+  }
+  
+  .messages {
+    width: 70vw;
+  }
+  
+  .message{
+    width: 70vw;
+  }
+  
+  .message__user{
+    width: 70vw;
+  }
+  
+  .message__text {
+    width: 30vw;
+    font-size: 2vh;
+    margin-left: 0vw;
+    margin-top: 2.5vh;
+  }
+  
+  .send {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+  }
+  
+  .send__inp {
+    height: 3vh;
+    width: 50vw;
+    font-size: 2vh;
+  }
+  
+  .send__btn{
+    width: 10vh;
+    height: 3vh;
+    margin-left: 2vw;
+    font-size: 2vh;
+  }
+  
+  .userDialog {
+    margin-bottom: 3.5vh;
+    align-items: center;
+  }
+  
+  .userDialog_open {
+    background-color: peachpuff;
+  }
+  
+  .user {
+    width: 12vh;
+    margin-left: 0vh;
+  }
+  
+  .msg {
+    width: 20vw;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    padding-bottom: 2vw;
+    padding-top: 2vw;
+    font-size: 3vh;
+    /*margin-top: 3vh;*/
+    /*margin-bottom: 1vh;*/
+  }
+  
+  .msg_notRead {
+    background-color: gray;
+  }
 }

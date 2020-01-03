@@ -12,6 +12,7 @@ class Dialogs extends React.Component {
                 {dialogs.map(dialog => 
                     <Dialog 
                     index={dialogs.map(dialog => dialog.id).indexOf(dialog.id)}
+                    key = {dialog.id}
                     />
                 )}
             </div>

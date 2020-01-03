@@ -24,7 +24,6 @@ class News extends React.Component {
             }
         })
         this.props.add({posts: posts});
-        //hashHistory.push('/news/${posts.id}');
         hashHistory.push('/news/' + id);
         this.forceUpdate();
     }

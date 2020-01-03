@@ -37,21 +37,24 @@ class Dialog extends React.Component {
         const dialog = dialogs[this.props.index];
         const users = this.props._users;
         return(
-            <div className="dialog">  
-                <div className="message-srory">
+            <div>  
+                <div className="messageStory">
                     {this.state.isVisibleMessages && <Messages 
                         story={dialog.messageStory} 
                         sendMessage={this.sendMessage}
                         users = {users}
                     />}
                 </div>
-                <div onClick={this.showMessages} className={this.state.isVisibleMessages ? "dialog-with-user open" : "dialog-with-user"}>
-                    <div className="dialog__user">
+                <div onClick={this.showMessages} className={this.state.isVisibleMessages ? "userDialog userDialog_open" : "userDialog"}>
+                    <div className="user">
                         <UsersPage  user = {users[users.map(user => user.id).indexOf(dialog.id_user)]}/>
                     </div>
-                    <p className={dialog.isReading ? "dialog__message" : "dialog__message not-read"}>
-                        {dialog.messageStory[dialog.messageStory.length - 1].text}
-                    </p>
+                    <div>
+                        <p className={dialog.isReading ? "msg" : "msg msg_notRead"}>
+                            {dialog.messageStory[dialog.messageStory.length - 1].text}
+                        </p>
+                    </div>
+                    
                 </div>
             </div>
         )
