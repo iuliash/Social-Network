@@ -40,6 +40,7 @@ class App extends React.Component{
         else 
             this.header.current.className = 'header';
         lastScroll = sy;
+        //this.menuElement.current.style.top = `${lastScroll}px`;
     }
 
     changeVisibleMenu = () => {
