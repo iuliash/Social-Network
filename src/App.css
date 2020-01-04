@@ -31,7 +31,7 @@ body {
   background-color: black;
   width: 15vw;
   transition: all 0.8s;
-  margin-left: -15vw;
+  margin-left: 0vw;
 }
 
 .menu_isOpen {
@@ -80,7 +80,7 @@ body {
   width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .logo__img{
@@ -89,6 +89,7 @@ body {
   object-fit: cover;
   transition: margin-left 1s;
   margin-left: 0.5vw;
+  display: none;
 }
 
 .logo__img_menuIsOpen {
@@ -520,7 +521,12 @@ main{
     margin-top: -10vh;
   }
   
+  .logo {
+    justify-content: space-between;
+  }
+
   .logo__img{
+    display: inline;
     width: 10vh;
     height: 10vh;
   }

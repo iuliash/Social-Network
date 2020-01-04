@@ -16,7 +16,7 @@ class App extends React.Component{
         super();
 
         this.state = {
-            isVisibleMenu: false
+            isVisibleMenu: true
         }
 
         this.menuElement = React.createRef();
@@ -43,7 +43,10 @@ class App extends React.Component{
 
     changeVisibleMenu = () => {
         const isVisible = this.state.isVisibleMenu;
-        if (!isVisible) {
+        if (window.innerWidth > 1024) 
+        {
+            this.setState({isVisibleMenu: true})
+        } else if (!isVisible) {
             this.logoElement.current.className = 'logo__img logo__img_menuIsOpen';
             this.setState({isVisibleMenu: !isVisible});
         } else {
@@ -52,7 +55,7 @@ class App extends React.Component{
             setTimeout(() => {
                 this.setState({isVisibleMenu: !isVisible})    
             }, 1000)
-        } 
+        }         
     }
 
     render(){
