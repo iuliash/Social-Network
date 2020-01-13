@@ -1,16 +1,16 @@
 import { combineReducers } from 'redux';
 
-import News from './newsReducer';
+import Posts from './postsReducer';
 import Friends from './friendsReducer';
 import Dialogs from './dialogsReducer';
-import Users from './users';
+//import Users from './users';
 import MainUser from './mainUser'
 
 
 export default combineReducers({
-  News, 
+  Posts, 
   Friends, 
   Dialogs, 
-  Users, 
+  //Users, 
   MainUser
 });

@@ -14,7 +14,7 @@ class Dialog extends React.Component {
         this.state = {
             isVisibleMessages: false
         }
-    }
+    } 
 
     sendMessage = (text) => {
         let dialogs = this.props._dialogs;
@@ -35,19 +35,17 @@ class Dialog extends React.Component {
     render(){
         const dialogs = this.props._dialogs;
         const dialog = dialogs[this.props.index];
-        const users = this.props._users;
         return(
             <div>  
                 <div className="messageStory">
                     {this.state.isVisibleMessages && <Messages 
                         story={dialog.messageStory} 
                         sendMessage={this.sendMessage}
-                        users = {users}
                     />}
                 </div>
                 <div onClick={this.showMessages} className={this.state.isVisibleMessages ? "userDialog userDialog_open" : "userDialog"}>
                     <div className="user">
-                        <UsersPage  user = {users[users.map(user => user.id).indexOf(dialog.id_user)]}/>
+                        <UsersPage  id_user = {dialog.id_user}/>
                     </div>
                     <div>
                         <p className={dialog.isReading ? "msg" : "msg msg_notRead"}>
@@ -64,8 +62,7 @@ class Dialog extends React.Component {
 const mapStateToProps = state => {
     return {
         _dialogs: state.Dialogs.dialogs,
-        _users: state.Users.users, 
-        _mainUser: state.MainUser.user,
+        _mainUser: state.MainUser.user
     }
 }
 

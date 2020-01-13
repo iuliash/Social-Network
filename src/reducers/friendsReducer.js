@@ -1,8 +1,9 @@
+/* don't used */
 const firstState = {
   friends: [
-    {id: 1}, 
     {id: 2}, 
-    {id: 4}
+    {id: 3}, 
+    {id: 5}
   ]
 }
 

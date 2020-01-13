@@ -1,4 +1,4 @@
-import u3 from '../img/u3.jpg';
+/*import u3 from '../img/u3.jpg';
 
 const firstState = {
     user: {
@@ -13,10 +13,14 @@ const firstState = {
         }
     }
     
-}
+}*/
 
-export default function MainUser(state = firstState, action){
+export default function MainUser(state = { user: {} }, action){
     switch (action.type) {
+        case 'SET_MAIN_USER':
+            return  action.obj;  
+        case 'DELETE_FRIEND':
+            return  action.obj;
         default: return state
     }
 }

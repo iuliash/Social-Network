@@ -2,8 +2,8 @@ export function addPost(array){
     return ({type: 'ADD_POST', array});
 }
 
-export function deleteFriend(array){
-    return ({type: 'DELETE_FRIEND', array}); 
+export function deleteFriend(obj){
+    return ({type: 'DELETE_FRIEND', obj}); 
 }
 
 export function sendMessage(array){
@@ -12,4 +12,8 @@ export function sendMessage(array){
 
 export function readMessage(array){
     return ({type: 'READ_MESSAGE', array}); 
+}
+
+export function setMainUser(obj) {
+    return ({type: 'SET_MAIN_USER', obj})
 }

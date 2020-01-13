@@ -14,8 +14,6 @@ export default function Messages(props){
         }
         return massage;
     }
-    
-    const users = props.users;
 
     return(
         <div className="story">
@@ -24,7 +22,7 @@ export default function Messages(props){
                     <div className="message">
                         <div className="message__user">
                             <UsersPage 
-                                user = {users[users.map(user => user.id).indexOf(message.id_user)]}     
+                                id_user = {message.id_user}     
                             />
                         </div>
                         <p className="message__text">{message.text}</p>

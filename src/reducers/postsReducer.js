@@ -6,7 +6,7 @@ const firstState = {
   posts: [
     {
       id: 7,
-      id_user: 1,
+      id_user: 2,
       content: {
         image: p1,
         text:'TextTextText'
@@ -14,7 +14,7 @@ const firstState = {
     }, 
     {
       id: 8,
-      id_user: 2,
+      id_user: 3,
       content: {
         image: p2, 
         text:'Teeeeeeeeeeeeeeeeext'
@@ -23,10 +23,10 @@ const firstState = {
   ]
 }
 
-export default function News (state = firstState, action) {
+export default function Posts (state = firstState, action) {
   switch (action.type) {
       case 'ADD_POST':
-        return  action.array  
+        return  action.array;  
       default: return state
   }
 }

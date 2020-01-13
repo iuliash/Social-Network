@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import UserPageMini from './components/User/UserPageMini'
 
 export default class Menu extends React.Component {
+    
     componentDidMount(){
         this.props.menuRef.current.className = 'menu';
         this.forceUpdate();

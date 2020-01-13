@@ -11,6 +11,7 @@ import Logo from './Logo'
 
 let lastScroll = 0;
 
+
 class App extends React.Component{ 
     constructor(){
         super();

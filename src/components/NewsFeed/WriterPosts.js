@@ -18,7 +18,7 @@ export default function WriterPosts(props) {
 
     return(
         <div className="writerPost">
-            <UsersPage  user = {props.user} />
+            <UsersPage  id_user = {props.id_user} />
             <form onSubmit={addPost} className="postForm">
                 <textarea className="postForm__input"
                     onChange={e => {setPostText(e.target.value)}} 

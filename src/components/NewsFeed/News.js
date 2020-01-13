@@ -29,19 +29,19 @@ class News extends React.Component {
     }
     
     render(){
-        let posts = this.props._posts; 
-        let users = this.props._users;
+        let posts = this.props._posts;
+        console.log(this.props._mainUser);
         return(
             <div>
                 <WriterPosts 
                     addPost = {this._addPost}
-                    user = {this.props._mainUser}
+                    id_user = {this.props._mainUser.id}
                 />
                 <div className="posts">
                     {posts.map(post => 
                         <Post 
                         post = {post}
-                        user={users[users.map(user => user.id).indexOf(post.id_user)]}
+                        id_user={post.id_user}
                         key={post.id}
                         />
                     )}    
@@ -55,8 +55,7 @@ class News extends React.Component {
 const mapStateToProps = state => {
     return {
         _posts: state.News.posts, 
-        _mainUser: state.MainUser.user, 
-        _users: state.Users.users
+        _mainUser: state.MainUser.user
     }
 }
 
