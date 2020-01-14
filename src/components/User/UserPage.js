@@ -7,7 +7,7 @@ class UserPage extends React.Component {
     render() {
         return (
             <div className ="userPage">
-                <img alt="Proglem with pictire" className="photo" src={this.props._user.photo}/>
+                <img alt="Proglem with picrure" className="photo" src={this.props._user.photo}/>
                 <div className="info">
                     <div className="info__text">
                         <p className="info__name" >{this.props._user.name}</p>

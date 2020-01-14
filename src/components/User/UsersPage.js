@@ -13,6 +13,10 @@ export default class UsersPage extends React.Component {
         }
     }
 
+    /*componentDidMount(){
+        this.forceUpdate();
+    }*/
+
     async componentWillUpdate(){
         if (this.props.id_user) {
             const url ='http://social-network.com/wp-json/wp/v2/';
@@ -29,11 +33,13 @@ export default class UsersPage extends React.Component {
         }
     }
 
+    
+
     render(){
         return(
             <div className="usersPage">
                 <img 
-                    alt="Proglem with pictire" 
+                    alt="Proglem with picrure" 
                     src={this.state.user.photo} 
                     className="usersPage__img"
                 />

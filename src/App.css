@@ -282,9 +282,18 @@ main{
   margin-bottom: 1vw;
 }
 
-.content__text{
+.content_header {
   font-family: 'Roboto Slab' , serif;
   font-size: 1.7vw;
+  text-decoration: none;
+  color:black; 
+  margin-top: 0.5vw;
+  margin-bottom: 1vw;
+}
+
+.content__text{
+  font-family: 'Roboto Slab' , serif;
+  font-size: 1.2vw;
   text-decoration: none;
   color:black; 
   margin-top: 0.5vw;

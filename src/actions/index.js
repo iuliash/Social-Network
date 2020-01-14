@@ -17,3 +17,11 @@ export function readMessage(array){
 export function setMainUser(obj) {
     return ({type: 'SET_MAIN_USER', obj})
 }
+
+export function setPosts(array) {
+    return ({type: 'SET_POSTS', array})
+}
+
+export function setPost(array) {
+    return ({type: 'SET_POST', array})
+}

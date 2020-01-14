@@ -64,11 +64,4 @@ const mapStateToProps = state => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return bindActionCreators({
-        delete: deleteFriend
-    }, dispatch)
-}
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(FriendsList);
+export default connect(mapStateToProps)(FriendsList);
