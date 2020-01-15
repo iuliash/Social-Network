@@ -16,7 +16,7 @@ export default function Logo(props) {
                     alt="Proglem with pictire"
                 />
                 <div>
-                    <p><Link to='/news/1' className="logo__text">Social.Net</Link></p>
+                    <p><Link to='/news' className="logo__text">Social.Net</Link></p>
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ class UserPageMini extends React.Component {
         this.forceUpdate();
     }
 
-    async componentWillUpdate(){
+    async componentDidUpdate(){
         const url ='http://social-network.com/wp-json/wp/v2/';
         let response = await fetch(url + 'users/4');
         const user = await response.json();

@@ -1,10 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
 
 import Friend from './Friend';
 
-import {deleteFriend} from '../../actions';
 
 class FriendsList extends React.Component {
     constructor(){

@@ -10,7 +10,7 @@ export default class Menu extends React.Component {
         this.forceUpdate();
     }
 
-    componentWillUpdate(){
+    componentDidUpdate(){
         setTimeout(() => {
             this.props.menuRef.current.className = 'menu menu_isOpen';
         }, 1);
@@ -21,8 +21,10 @@ export default class Menu extends React.Component {
             <div className= "menu" ref={this.props.menuRef}>
                 <UserPageMini />
                 <ul className="navbar">
+                    <li onClick={this.props.changeVisibleMenu}><Link to='/new-post' className="navbar__item">New Post</Link></li>
+                    <br />
                     <li onClick={this.props.changeVisibleMenu}><Link to='/userPage' className="navbar__item">UserPage</Link></li>
-                    <li onClick={this.props.changeVisibleMenu}><Link to='/news/1' className="navbar__item">News</Link></li>
+                    <li onClick={this.props.changeVisibleMenu}><Link to='/news' className="navbar__item">News</Link></li>
                     <li onClick={this.props.changeVisibleMenu}><Link to='/friends' className="navbar__item">Friends</Link></li>
                     <li onClick={this.props.changeVisibleMenu}><Link to='/dialogs' className="navbar__item">Dialogs</Link></li>
                 </ul>

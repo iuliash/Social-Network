@@ -25,6 +25,14 @@ body {
   background-color:black;
 }
 
+.link-btn{
+  text-decoration: none;
+  font-family: 'Roboto Slab' , serif;
+  font-size: 1.5vw;
+
+  color: #ffffff;
+}
+
 /* menu */
 
 .menu {
@@ -219,6 +227,15 @@ main{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-top: 10vh;
+}
+
+.posts__btn{
+  width: 10vw;
+  height: 3vw;
+  border: 1px solid #000000; 
+  background: #333333;
+  align-self: flex-end;
 }
 
 .writerPost{
@@ -238,8 +255,27 @@ main{
   margin-top: 1vw;
 }
 
-.postForm__input {
-  height: 7vw;
+.postForm__title{
+  height: 2vw;
+  width: 50vw;
+  margin-bottom: 1vw;
+
+  font-family: 'Roboto Slab' , serif;
+  font-size: 1.5vw;
+}
+
+.postForm__excerpt{
+  height: 10vw;
+  width: 50vw;
+  margin-bottom: 1vw;
+  text-align: justify;
+
+  font-family: 'Roboto Slab' , serif;
+  font-size: 1.5vw;
+}
+
+.postForm__content {
+  height: 20vw;
   width: 50vw;
   margin-bottom: 2vw;
 
@@ -263,15 +299,16 @@ main{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 2vw;
-  margin-bottom: 1vw;
+  margin-top: 4vh;
+  margin-bottom: 2vh;
 }
+
 
 .content {
   width: 50vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .content__img{
@@ -280,10 +317,14 @@ main{
   object-fit: cover;
   margin-top: 1vw;
   margin-bottom: 1vw;
+  align-self: center;
 }
 
 .content_header {
   font-family: 'Roboto Slab' , serif;
+  width: 30vw;
+  align-self: center;
+  text-align: center;
   font-size: 1.7vw;
   text-decoration: none;
   color:black; 
@@ -299,6 +340,64 @@ main{
   margin-top: 0.5vw;
   margin-bottom: 1vw;
 }
+
+.content__btn{
+  width: 10vw;
+  height: 3vw;
+  border: 1px solid #000000; 
+  background: #333333;
+  align-self: flex-end;
+}
+
+  /* full post */
+  
+  .full-post{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8vh;
+  }
+
+  .full-post__info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 4vh;
+  }
+
+  .full-post__title{
+    font-family: 'Roboto Slab' , serif;
+    font-size: 1.8vw;
+    text-decoration: none;
+    color: black;
+    margin-top: 1vw;
+    margin-left: 5vw;
+  }
+
+  .full-post__img{
+    width: 50vw;
+    height: 40vw;
+    object-fit: cover;
+  }
+
+  .full-post__content{
+    font-family: 'Roboto Slab' , serif;
+    font-size: 1.2vw;
+    text-decoration: none;
+    color: black;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+  }
+
+  .full-post__btn{
+    width: 10vw;
+    height: 3vw;
+    border: 1px solid #000000; 
+    background: #333333;
+    align-self: flex-end;
+  }
 
 /* users page */
 
@@ -497,10 +596,24 @@ main{
 }
 
 
+
+
+
+
+
+
+
+
+
 @media only screen and (max-device-width: 1024px) {
   body {
     background-color: white;
   }
+
+  .link-btn{
+    font-size: 3vh;
+  }
+  
 
   .menu {
     width: 100vw;
@@ -618,6 +731,11 @@ main{
   .posts {
     flex-direction: column;
   }
+
+  .posts__btn{
+    width: 20vh;
+    height: 6vh;
+  } 
   
   .writerPost{
     flex-direction: column;
@@ -631,14 +749,27 @@ main{
     justify-content: center;
     margin-top: 1vh;
   }
-  
-  .postForm__input {
-    height: 20vh;
+
+  .postForm__title{
+    height: 3vh;
     width: 70vw;
-    margin-bottom: 2vh;
-  
-    font-family: 'Roboto Slab' , serif;
-    font-size: 1.5vh;
+    margin-bottom: 2vw;
+    font-size: 2vh;
+  }
+
+  .postForm__excerpt{
+    height: 15vh;
+    width: 70vw;
+    margin-bottom: 2vw;
+    font-size: 2vh;
+  }
+
+
+  .postForm__content {
+    height: 30vh;
+    width: 70vw;
+    margin-bottom: 4vh;
+    font-size: 2vh;
   }
   
   .postForm__btn {
@@ -663,16 +794,66 @@ main{
     margin-top: 1vh;
     margin-bottom: 1vh;
   }
-  
-  .content__text{
+
+  .content_header {
     font-family: 'Roboto Slab' , serif;
-    font-size: 3vh;
-    text-decoration: none;
-    color:black; 
-    margin-top: 0.5vh;
+    width: 60vw;
+    font-size: 2.7vh;
+    margin-top: 2vh;
     margin-bottom: 1vh;
   }
   
+  .content__text{
+    font-size: 2vh;
+    margin-top: 0.5vh;
+    margin-bottom: 1vh;
+  }
+
+  .content__btn{
+    width: 10vh;
+    height: 7vh;
+  }
+
+/* full post */
+  
+.full-post{
+  width: 80vw;
+  margin-top: 6vh;
+}
+
+.full-post__info{
+  flex-direction: column;
+  margin-bottom: 4vh;
+}
+
+.full-post__title{
+  font-size: 6vw;
+  margin-top: 1vh;
+  margin-left: 1vh;
+  align-self: flex-end;
+  text-align: center
+}
+
+.full-post__img{
+  width: 80vw;
+  height: 35vh;
+}
+
+.full-post__content{
+  font-family: 'Roboto Slab' , serif;
+  font-size: 2.5vw;
+  text-align: justify;
+  text-decoration: none;
+  color: black;
+  margin-top: 2vh;
+  margin-bottom: 2vw;
+}
+
+.full-post__btn{
+  width: 10vh;
+  height: 7vh;
+}
+
   /* users page */
   
   .usersPage {
@@ -796,8 +977,6 @@ main{
     padding-bottom: 2vw;
     padding-top: 2vw;
     font-size: 3vh;
-    /*margin-top: 3vh;*/
-    /*margin-bottom: 1vh;*/
   }
   
   .msg_notRead {

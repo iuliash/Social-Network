@@ -13,11 +13,11 @@ export default class UsersPage extends React.Component {
         }
     }
 
-    /*componentDidMount(){
+    componentDidMount(){
         this.forceUpdate();
-    }*/
+    }
 
-    async componentWillUpdate(){
+    async componentDidUpdate() {
         if (this.props.id_user) {
             const url ='http://social-network.com/wp-json/wp/v2/';
             let response = await fetch(url + 'users/' + this.props.id_user);
