@@ -39,9 +39,10 @@ class WriterPosts extends React.Component {
             template: "",
             format: "standard"
         }
-        const url = 'http://social-network.com/wp-json/wp/v2/posts';
+        console.log(post.id);
+        const url = 'http://social-network.com/wp-json/wp/v2/posts/';
             fetch(url, {
-                method: 'POST',
+                method: 'PUT',
                 body: JSON.stringify(post), 
                 headers: {
                   'Content-Type': 'application/json'
@@ -49,7 +50,7 @@ class WriterPosts extends React.Component {
             })
                 .then (response => {
                     if (response.status !== 200 ) {
-                        throw new Error ('Error code: ', response.status);
+                        console.log ('Error code: ', response.status);
                     }
                 response.json()
                     .then (posts => {

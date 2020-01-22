@@ -6,6 +6,10 @@ export function deleteFriend(obj){
     return ({type: 'DELETE_FRIEND', obj}); 
 }
 
+export function setDialogs(obj) {
+    return ({type: 'SET_DIALOGS', obj})
+}
+
 export function sendMessage(array){
     return ({type: 'SEND_MESSAGE', array}); 
 }

@@ -18,8 +18,37 @@ class Dialog extends React.Component {
 
     sendMessage = (text) => {
         let dialogs = this.props._dialogs;
-        dialogs[this.props.index].messageStory.push({id_user: this.props._mainUser.id, text: text});
+        let message = {
+            id: Math.floor(Math.random() * 100), 
+            id_user: this.props._mainUser.id, 
+            text: text
+        }
+        dialogs[this.props.index].message_story += ', ' + message.id;
+        dialogs[this.props.index].last_message = message.text;
         this.props.send({dialogs: dialogs});
+        
+        /* отправка на сервер */
+
+        fetch('http://social-network.com/wp-json/wp/v2/dialogs/' + dialogs[this.props.index].id, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json', 
+                //'Authorization': /*'Basic ' . base64_encode( */'iulia:12345' 
+            },
+            body: JSON.stringify(dialogs[this.props.index]),
+        })
+        .then(response => response.json()); 
+
+        fetch('http://social-network.com/wp-json/wp/v2/messages/' + message.id, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json', 
+                //'Authorization': /*'Basic ' . base64_encode( */'iulia:12345' 
+            },
+            body: JSON.stringify(message),
+        })
+        .then(response => response.json()); //not found
+        
         this.forceUpdate();
     }
 
@@ -27,7 +56,7 @@ class Dialog extends React.Component {
         let isVisible = this.state.isVisibleMessages;
         this.setState({isVisibleMessages: !isVisible});
         let dialogs = this.props._dialogs;
-        dialogs[this.props.index].isReading = true;
+        dialogs[this.props.index].is_reading = "1";
         this.props.read({dialogs: dialogs});
         this.forceUpdate();
     }
@@ -39,8 +68,9 @@ class Dialog extends React.Component {
             <div>  
                 <div className="messageStory">
                     {this.state.isVisibleMessages && <Messages 
-                        story={dialog.messageStory} 
+                        index={dialog.id} 
                         sendMessage={this.sendMessage}
+                        story = {dialog.message_story}
                     />}
                 </div>
                 <div onClick={this.showMessages} className={this.state.isVisibleMessages ? "userDialog userDialog_open" : "userDialog"}>
@@ -48,8 +78,8 @@ class Dialog extends React.Component {
                         <UsersPage  id_user = {dialog.id_user}/>
                     </div>
                     <div>
-                        <p className={dialog.isReading ? "msg" : "msg msg_notRead"}>
-                            {dialog.messageStory[dialog.messageStory.length - 1].text}
+                        <p className={dialog.is_reading === '1' ? "msg" : "msg msg_notRead"}>
+                            {this.props.last_message}
                         </p>
                     </div>
                     
@@ -67,7 +97,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({
+    return bindActionCreators({ 
         send: sendMessage, 
         read: readMessage
     }, dispatch)

@@ -33,9 +33,11 @@ const firstStateDialog = {
 
 export default function Dialogs (state = firstStateDialog, action) {
     switch (action.type) {
-        case 'SEND_MESSAGE':
-          return  action.array
-        default: return state
+      case 'SET_DIALOGS':
+        return  action.obj 
+      case 'SEND_MESSAGE':
+        return  action.array
+      default: return state
     }
   }
 

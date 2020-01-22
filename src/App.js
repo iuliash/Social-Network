@@ -58,6 +58,7 @@ class App extends React.Component{
             }, 1000)
         }         
     }
+    
 
     render(){
         const isVisible = this.state.isVisibleMenu;
