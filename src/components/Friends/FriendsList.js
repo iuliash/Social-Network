@@ -60,17 +60,40 @@ class FriendsList extends React.Component {
         user.friends = friends_id;
         this.props.set({user: user});
 
-        /* изменение на сервере */
+        /* изменение на сервере 
         fetch('http://social-network.com/wp-json/wp/v2/users/4', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json', 
-                //'Authorization': /*'Basic ' . base64_encode( */'iulia:12345' 
+                //'Authorization': 'socialNetworkApp:R7jp UR9Z YXTk EutY cHwJ izNC' 
+                //'Authorization': 'Basic '+btoa('socialNetworkApp:R7jp UR9Z YXTk EutY cHwJ izNC')
+                'Authorization': 'Basic R7jpUR9ZYXTkEutYcHwJizNC'
             },
+            credentials: 'include',
             body: JSON.stringify(this.props._user),
         })
-        .then(response => response.json()); 
+        .then(response => response.json()); */
 
+        var WPAPI = require( 'wpapi' );
+        var wp = new WPAPI({
+            endpoint: 'http://your-site.com/wp-json',
+            //Access-Control-Allow-Origin: *
+            // This assumes you are using basic auth, as described further below
+            username: 'Kazakov Vasya',
+            password: 'k09r yGLm LqWL 3puK SDxr mkNZ'
+        });
+        // .id() must be used to specify the post we are updating
+        wp.users().setHeaders( 'Access-Control-Allow-Origin', '*' )
+        wp.users().id( 4 ).update({
+            // Update the title
+            friends: user.friends,
+            // Set the post live (assuming it was "draft" before)
+            status: 'publish'
+        })
+        //.header.set( 'Access-Control-Allow-Origin: *' )
+        .then(function( response ) {
+            console.log( response );
+        })
         this.forceUpdate();
     }
     

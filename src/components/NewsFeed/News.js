@@ -19,6 +19,8 @@ class News extends React.Component {
         const posts = await response.json();
         response = await fetch(url + 'media');
         const photos = await response.json();
+        console.log(posts);
+        console.log(photos);
         posts.forEach(post => {
             let _post = {
                 id: post.id, 
@@ -30,6 +32,7 @@ class News extends React.Component {
             _posts.push(_post);
         })
         this.props.set({posts: _posts});
+        console.log(this.props._posts)
     }
     
     render(){

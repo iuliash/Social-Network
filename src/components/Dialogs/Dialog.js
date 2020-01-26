@@ -29,11 +29,11 @@ class Dialog extends React.Component {
         
         /* отправка на сервер */
 
-        fetch('http://social-network.com/wp-json/wp/v2/dialogs/' + dialogs[this.props.index].id, {
+        /*fetch('http://social-network.com/wp-json/wp/v2/dialogs/' + dialogs[this.props.index].id, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json', 
-                //'Authorization': /*'Basic ' . base64_encode( */'iulia:12345' 
+                'Authorization': 'iulia:12345' 
             },
             body: JSON.stringify(dialogs[this.props.index]),
         })
@@ -43,11 +43,41 @@ class Dialog extends React.Component {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json', 
-                //'Authorization': /*'Basic ' . base64_encode( */'iulia:12345' 
+                //'Authorization': /*'Basic ' . base64_encode( 'iulia:12345' 
             },
             body: JSON.stringify(message),
         })
-        .then(response => response.json()); //not found
+        .then(response => response.json()); //not found*/
+
+        /*var WPAPI = require( 'wpapi' );
+        
+        var wp = new WPAPI({
+            endpoint: 'http://social-network.com/wp-json',
+            username: 'Kazakov Vasya',
+            password: 'k09r yGLm LqWL 3puK SDxr mkNZ'
+        });
+        wp.dialogs().update({
+            last_message: this.props._mainUser.id, 
+            message_story: text, 
+            dialog_id: this.props.key,
+            status: 'publish'
+        }).then(function( response ) {
+            console.log( response.id );
+        })
+        
+        var wp1 = new WPAPI({
+            endpoint: 'http://social-network.com/wp-json',
+            username: 'Kazakov Vasya',
+            password: 'k09r yGLm LqWL 3puK SDxr mkNZ'
+        });
+        wp1.messages().create({
+            user_id: this.props._mainUser.id, 
+            text_message: text, 
+            dialog_id: this.props.key,
+            status: 'publish'
+        }).then(function( response ) {
+            console.log( response.id );
+        })*/
         
         this.forceUpdate();
     }
